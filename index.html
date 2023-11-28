@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dom task 2</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        button {
+            border: black 2px solid;
+            background: skyblue;
+            height: 50px;
+            width: 100px;
+            cursor: pointer;
+            position: absolute;
+        }
+
+        .topRight {
+            top: 0;
+            right: 0;
+        }
+
+        .bottomRight {
+            bottom: 0;
+            right: 0;
+        }
+
+        .bottomLeft {
+            bottom: 0;
+            left: 0;
+        }
+
+    </style>
+</head>
+<body>
+    <button>Click me!</button>
+
+    <script>
+        var button = document.querySelector("button")
+
+        button.addEventListener("click", function(){
+
+            if (button.classList.contains("topRight")){
+                button.classList.remove("topRight")
+                button.classList.add("bottomRight")
+            } else if (button.classList.contains("bottomRight")){
+                button.classList.remove("bottomRight")
+                button.classList.add("bottomLeft")
+            } else if (button.classList.contains("bottomLeft")){
+                button.classList.remove("bottomLeft")
+            } else {
+                button.classList.add("topRight")
+            }
+        })
+        
+    </script>
+</body>
+</html>
